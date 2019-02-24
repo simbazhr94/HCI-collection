@@ -1,0 +1,25 @@
+问题：决策系统：人可以根据环境改变选择，机器人执行既定
+难点：不知人脑做decision neuroscience决策时的计算准则/不知道怎么把脑决策活动用code实现
+方案：计算神经科学里已可以借鉴来写code：1、发现人脑的'meta-controller'，决定如何切换子任务（操作系统！）；2、人类的疼痛系统：保护人类避免疼痛
+痛点1：psychiatric disorders such as anxiety, depression, and addiction机器人是仿真平台，类似实验动物
+    例如reproduce anxiety behavior or obsessive-compulsive disorder in a robot
+痛点2：提高机器人的学习、表演、协作能力
+额外收获：理解人的行为、人的定义：类人肯定有impulsive or overcautious
+痛点3：当前RL的缺点：难develop目标驱动的算法、难few shot learning
+
+方案：人脑中metacontroller 根据预测（性能）、认知load（效率）、学习（速度）来切换；多机器人冲突时的决策；探索-利用的平衡
+具体方案一：人类两种行为控制策略：1、刺激驱动的习惯控制【自动、快、稳定性差，例如model-freeRL没有建模环境就增量学行为】；
+  2、目标驱动的认知控制【应变性好稳定性好、model-basedRL学一个关于该环境的state-action因果映射，且能适应环境结构中的变化】
+  model-free RL： accuracy低，构建得慢（speed），cognitive load低  
+  model-basedRL： accuracy高，构建得相对快（speed），cognitive load高  
+具体方案二：人RL few-shot learning。在与有限环境交互时，人会增加学习速度；他们想攻克环境的未知部分。-->大脑会tradeoff性能和学习速度
+具体方案三：前额叶会灵活地在多种学习策略中metacontrol例如model-free/based RL;增量/oneshot learning
+          遇新环境时，metacontroller accentuates 性能accuracy model-based；因为认知load高，所以一旦发现继续学没啥用后，就resort to model-free省电
+                       没啥用包括：环境太简单平稳/环境太多变还不如model-free找不到规率
+   当估计的因果关系中不确定性太多时，metacontroller accentuates 学习速度.one-shot快速解决不确定性，当倘若对所有可能的因果关系都不确定的话，agent就增量学习求稳
+具体方案四：人RL可以解释社会现象对于进化的重要性：社会中人类多智能体交互、遇到过部分竞争和部分均衡奖励的社会困境    
+
+Brain-inspired solutions to robot learning. Neuroscientific views on various aspects of learning and cognition
+converge and create a new idea called prefrontal metacontrol, which can inspire researchers to design learning
+agents that can address various key challenges in robotics such as performance-efficiency-speed, cooperationcompetition,
+and exploration-exploitation trade-offs.
